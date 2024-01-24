@@ -36,6 +36,16 @@ td:hover{
 tr:hover{
     background-color:pink;
 }
+button {
+            padding: 10px;
+            border-radius: 1rem;
+            background-color:crimson;
+            padding:.5rem 1rem;
+            font-size: 1.8rem;
+            color:black;
+            border:1px solid black;
+            margin:1rem 0;
+        }
 </style>
 
 </head>
@@ -49,6 +59,7 @@ tr:hover{
 			<th>Id</th>
 			<th>Name </th>
 			<th>Description</th>
+			<td>Edit</td>
 		</tr>
 		<?php
 //Brand List
@@ -66,6 +77,10 @@ $id = $task_data['id'];
 			<td><?php echo $task_data['id']; ?></td>
 			<td><?php echo $task_data['title']; ?></td>
 			<td><?php echo $task_data['description']; ?></td>
+			<td>
+                <button><a href="delete.php?deleteid=<?php echo $row['id'] ?>">delete</button>
+                <button><a href="update.php?updateid=<?php echo $row['id'] ?>">update</button>
+            </td>
 
 		</tr>
 		<?php } ?>
